@@ -1,3 +1,5 @@
+use std::prelude::v1::*;
+
 use {
     super::{Interval, IntervalError, DAY, HOUR, MINUTE, SECOND},
     crate::{

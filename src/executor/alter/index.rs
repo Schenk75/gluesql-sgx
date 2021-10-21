@@ -1,5 +1,7 @@
 #![cfg(feature = "index")]
 
+use std::prelude::v1::*;
+
 use {
     super::AlterError,
     crate::{

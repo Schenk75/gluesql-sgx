@@ -2,6 +2,8 @@ mod alter_table;
 mod index;
 mod transaction;
 
+use std::prelude::v1::*;
+
 use {
     crate::{
         data::{Row, Schema},

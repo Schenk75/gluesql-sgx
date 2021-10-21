@@ -1,3 +1,5 @@
+use std::prelude::v1::*;
+
 use {
     super::{Interval, StringExt},
     crate::{ast::DataType, result::Result},

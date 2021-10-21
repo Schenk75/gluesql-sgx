@@ -1,3 +1,5 @@
+use std::prelude::v1::*;
+
 use {
     super::{
         ast_literal::translate_trim_where_field, expr::translate_expr, translate_object_name,

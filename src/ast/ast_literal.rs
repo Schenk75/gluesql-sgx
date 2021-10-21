@@ -1,3 +1,5 @@
+use std::prelude::v1::*;
+
 use serde::{Deserialize, Serialize};
 
 #[derive(Debug, Clone, PartialEq, Eq, Hash, Serialize, Deserialize)]

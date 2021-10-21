@@ -1,3 +1,5 @@
+use std::prelude::v1::*;
+
 use sled::IVec;
 
 const TEMP_DATA: &str = "temp_data/";

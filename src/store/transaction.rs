@@ -1,3 +1,5 @@
+use std::prelude::v1::*;
+
 use {crate::MutResult, async_trait::async_trait};
 
 #[async_trait(?Send)]

@@ -1,3 +1,5 @@
+use std::prelude::v1::*;
+
 use {
     crate::{Error, IndexError},
     sled::transaction::TransactionError as SledTransactionError,

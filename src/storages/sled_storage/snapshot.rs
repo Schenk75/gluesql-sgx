@@ -1,3 +1,5 @@
+use std::prelude::v1::*;
+
 use {
     serde::{Deserialize, Serialize},
     std::fmt::Debug,

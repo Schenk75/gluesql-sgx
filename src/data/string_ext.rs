@@ -1,3 +1,5 @@
+use std::prelude::v1::*;
+
 use {crate::result::Result, regex::Regex, serde::Serialize, thiserror::Error};
 
 #[derive(Error, Serialize, Debug, PartialEq)]

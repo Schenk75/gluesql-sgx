@@ -1,3 +1,5 @@
+use std::prelude::v1::*;
+
 use {serde::Serialize, std::fmt::Debug, thiserror::Error as ThisError};
 
 #[derive(ThisError, Serialize, Debug, PartialEq)]

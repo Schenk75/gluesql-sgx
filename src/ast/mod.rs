@@ -1,3 +1,5 @@
+use std::prelude::v1::*;
+
 mod ast_literal;
 mod data_type;
 mod ddl;

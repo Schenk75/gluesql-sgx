@@ -1,5 +1,7 @@
 #![cfg(feature = "alter-table")]
 
+use std::prelude::v1::*;
+
 use {
     super::MemoryStorage,
     crate::{

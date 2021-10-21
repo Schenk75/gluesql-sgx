@@ -1,3 +1,5 @@
+use std::prelude::v1::*;
+
 use {
     crate::{ast::ColumnDef, result::MutResult},
     async_trait::async_trait,

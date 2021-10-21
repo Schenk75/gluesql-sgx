@@ -1,3 +1,5 @@
+use std::prelude::v1::*;
+
 use {
     super::{
         date::{parse_date, parse_time, parse_timestamp},

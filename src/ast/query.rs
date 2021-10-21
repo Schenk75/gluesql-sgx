@@ -1,3 +1,5 @@
+use std::prelude::v1::*;
+
 use {
     super::{Expr, IndexOperator, ObjectName},
     serde::{Deserialize, Serialize},

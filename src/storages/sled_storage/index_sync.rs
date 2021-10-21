@@ -1,3 +1,5 @@
+use std::prelude::v1::*;
+
 use {
     super::{err_into, fetch_schema, key, Snapshot},
     crate::{

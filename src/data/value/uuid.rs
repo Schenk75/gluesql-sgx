@@ -1,3 +1,5 @@
+use std::prelude::v1::*;
+
 use {
     super::error::ValueError,
     crate::{result::Result, Error::Value},

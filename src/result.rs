@@ -1,3 +1,5 @@
+use std::prelude::v1::*;
+
 use {
     crate::{
         data::{IntervalError, LiteralError, RowError, StringExtError, TableError, ValueError},

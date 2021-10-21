@@ -1,9 +1,11 @@
+use std::prelude::v1::*;
+
 use {
     crate::{
         ast::Statement,
         execute, parse, plan,
         store::{GStore, GStoreMut},
-        translate, Payload, Result,
+        translate, Payload, result::Result,
     },
     futures::executor::block_on,
     std::{fmt::Debug, marker::PhantomData},

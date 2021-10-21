@@ -1,3 +1,5 @@
+use std::prelude::v1::*;
+
 use {
     super::{Value, ValueError},
     crate::{data::Interval, result::Result},

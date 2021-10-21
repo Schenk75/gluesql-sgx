@@ -20,7 +20,7 @@ keywords = [
 all-features = true
 
 [features]
-default = ["sled-storage", "memory-storage", "alter-table", "sorter"]
+default = ["memory-storage", "alter-table", "sorter"]
 
 # optional: ALTER TABLE
 # you can include whether ALTER TABLE support or not for your custom database implementation.
@@ -44,25 +44,28 @@ sled-storage = ["transaction", "index", "sled", "bincode"]
 memory-storage = ["sorter"]
 
 [dependencies]
-regex = "1.5"
+regex = { git = "https://github.com/mesalock-linux/regex-sgx.git" }
 async-trait = "0.1"
 async-recursion = "0.3"
 cfg-if = "1"
-chrono = { version = "0.4", features = ["serde", "wasmbind"] }
-rust_decimal = "1.15"
-futures = "0.3"
-indexmap = "1.7"
-im-rc = "15.0"
+chrono = { git = "https://github.com/EmisonLu/chrono-sgx.git" }
+rust_decimal = { git = "https://github.com/EmisonLu/rust-decimal.git" }
+futures = { git = "https://github.com/lengyijun/futures-rs.git" }
+indexmap = { git = "https://github.com/mesalock-linux/indexmap-sgx.git" }
+im-rc = { path = "../im-rc" }
 iter-enum = "1"
-itertools = "0.10"
+itertools = { git = "https://github.com/mesalock-linux/rust-itertools-sgx.git"}
 pin-project = "1.0"
-serde = { version = "1", features = ["derive"] }
-serde_json = "1"
-sqlparser = { git = "https://github.com/sqlparser-rs/sqlparser-rs/", rev = "014b82f03d82d6f36b5271376e33461002709a55" }
-thiserror = "1.0"
+serde = { git = "https://github.com/mesalock-linux/serde-sgx.git", features = ["derive"] }
+serde_json = { git = "https://github.com/mesalock-linux/serde-json-sgx.git" }
+sqlparser = { path = "../sqlparser-rs", default-features = false, features = [] }
+thiserror = { git = "https://github.com/mesalock-linux/thiserror-sgx.git" }
 strum = "0.21"
 strum_macros = "0.21"
-uuid = { version = "0.8", features = ["v4"] }
+uuid = { git = "https://github.com/mesalock-linux/uuid-sgx.git", features = ["v4"] }
+
+[target.'cfg(not(target_env = "sgx"))'.dependencies]
+sgx_tstd = { version = "1.0", rev = "v1.1.3", git = "https://github.com/apache/teaclave-sgx-sdk.git", features=["untrusted_fs","thread", "backtrace"] }
 
 # dependencies for sled-storage
 bincode = { version = "1.3", optional = true }
@@ -75,3 +78,34 @@ criterion = "0.3"
 [[bench]]
 name = "sled_benchmark"
 harness = false
+
+[patch.'https://github.com/apache/teaclave-sgx-sdk.git']
+sgx_align_struct_attribute = { branch = "v1.1.4-testing", git = "https://github.com/apache/incubator-teaclave-sgx-sdk" }
+sgx_alloc = { branch = "v1.1.4-testing", git = "https://github.com/apache/incubator-teaclave-sgx-sdk" }
+sgx_backtrace = { branch = "v1.1.4-testing", git = "https://github.com/apache/incubator-teaclave-sgx-sdk" }
+sgx_backtrace_sys = { branch = "v1.1.4-testing", git = "https://github.com/apache/incubator-teaclave-sgx-sdk" }
+sgx_build_helper = { branch = "v1.1.4-testing", git = "https://github.com/apache/incubator-teaclave-sgx-sdk" }
+sgx_cov = { branch = "v1.1.4-testing", git = "https://github.com/apache/incubator-teaclave-sgx-sdk" }
+sgx_crypto_helper = { branch = "v1.1.4-testing", git = "https://github.com/apache/incubator-teaclave-sgx-sdk" }
+sgx_demangle = { branch = "v1.1.4-testing", git = "https://github.com/apache/incubator-teaclave-sgx-sdk" }
+sgx_libc = { branch = "v1.1.4-testing", git = "https://github.com/apache/incubator-teaclave-sgx-sdk" }
+sgx_no_tstd = { branch = "v1.1.4-testing", git = "https://github.com/apache/incubator-teaclave-sgx-sdk" }
+sgx_rand = { branch = "v1.1.4-testing", git = "https://github.com/apache/incubator-teaclave-sgx-sdk" }
+sgx_rand_derive = { branch = "v1.1.4-testing", git = "https://github.com/apache/incubator-teaclave-sgx-sdk" }
+sgx_serialize = { branch = "v1.1.4-testing", git = "https://github.com/apache/incubator-teaclave-sgx-sdk" }
+sgx_serialize_derive = { branch = "v1.1.4-testing", git = "https://github.com/apache/incubator-teaclave-sgx-sdk" }
+sgx_serialize_derive_internals = { branch = "v1.1.4-testing", git = "https://github.com/apache/incubator-teaclave-sgx-sdk" }
+sgx_tcrypto = { branch = "v1.1.4-testing", git = "https://github.com/apache/incubator-teaclave-sgx-sdk" }
+sgx_tcrypto_helper = { branch = "v1.1.4-testing", git = "https://github.com/apache/incubator-teaclave-sgx-sdk" }
+sgx_tdh = { branch = "v1.1.4-testing", git = "https://github.com/apache/incubator-teaclave-sgx-sdk" }
+sgx_tkey_exchange = { branch = "v1.1.4-testing", git = "https://github.com/apache/incubator-teaclave-sgx-sdk" }
+sgx_tprotected_fs = { branch = "v1.1.4-testing", git = "https://github.com/apache/incubator-teaclave-sgx-sdk" }
+sgx_trts = { branch = "v1.1.4-testing", git = "https://github.com/apache/incubator-teaclave-sgx-sdk" }
+sgx_tse = { branch = "v1.1.4-testing", git = "https://github.com/apache/incubator-teaclave-sgx-sdk" }
+sgx_tseal = { branch = "v1.1.4-testing", git = "https://github.com/apache/incubator-teaclave-sgx-sdk" }
+sgx_tstd = { branch = "v1.1.4-testing", git = "https://github.com/apache/incubator-teaclave-sgx-sdk" }
+sgx_tunittest = { branch = "v1.1.4-testing", git = "https://github.com/apache/incubator-teaclave-sgx-sdk" }
+sgx_types = { branch = "v1.1.4-testing", git = "https://github.com/apache/incubator-teaclave-sgx-sdk" }
+sgx_ucrypto = { branch = "v1.1.4-testing", git = "https://github.com/apache/incubator-teaclave-sgx-sdk" }
+sgx_unwind = { branch = "v1.1.4-testing", git = "https://github.com/apache/incubator-teaclave-sgx-sdk" }
+sgx_urts = { branch = "v1.1.4-testing", git = "https://github.com/apache/incubator-teaclave-sgx-sdk" }

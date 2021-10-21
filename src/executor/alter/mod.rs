@@ -1,3 +1,5 @@
+use std::prelude::v1::*;
+
 mod alter_table;
 mod error;
 mod index;

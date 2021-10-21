@@ -66,6 +66,11 @@
 //!
 //! After you implement `Tester` trait, the only thing you need to do is calling `generate_tests!` macro.
 
+#![no_std]
+use std::prelude::v1::*;
+#[macro_use]
+extern crate sgx_tstd as std;
+
 // re-export
 pub use chrono;
 #[cfg(feature = "sled-storage")]
@@ -83,7 +88,7 @@ pub mod data;
 pub mod plan;
 pub mod result;
 pub mod store;
-pub mod tests;
+// pub mod tests;
 pub mod translate;
 
 pub use data::*;

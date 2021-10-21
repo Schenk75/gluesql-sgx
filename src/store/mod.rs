@@ -1,3 +1,5 @@
+use std::prelude::v1::*;
+
 use cfg_if::cfg_if;
 
 cfg_if! {

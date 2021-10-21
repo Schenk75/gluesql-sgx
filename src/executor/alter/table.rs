@@ -1,3 +1,5 @@
+use std::prelude::v1::*;
+
 use {
     super::{validate, AlterError},
     crate::{

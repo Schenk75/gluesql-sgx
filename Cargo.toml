@@ -52,7 +52,7 @@ chrono = { git = "https://github.com/EmisonLu/chrono-sgx.git" }
 rust_decimal = { git = "https://github.com/EmisonLu/rust-decimal.git" }
 futures = { git = "https://github.com/lengyijun/futures-rs.git" }
 indexmap = { git = "https://github.com/mesalock-linux/indexmap-sgx.git" }
-im-rc = { path = "../im-rc" }
+im-rc = { git = "https://github.com/EmisonLu/im-rs.git" }
 iter-enum = "1"
 itertools = { git = "https://github.com/mesalock-linux/rust-itertools-sgx.git"}
 pin-project = "1.0"

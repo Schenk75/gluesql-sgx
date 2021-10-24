@@ -1,5 +1,3 @@
-use std::prelude::v1::*;
-
 mod indexmap;
 mod or_stream;
 mod vector;

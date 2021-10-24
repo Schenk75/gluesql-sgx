@@ -58,7 +58,7 @@ itertools = { git = "https://github.com/mesalock-linux/rust-itertools-sgx.git"}
 pin-project = "1.0"
 serde = { git = "https://github.com/mesalock-linux/serde-sgx.git", features = ["derive"] }
 serde_json = { git = "https://github.com/mesalock-linux/serde-json-sgx.git" }
-sqlparser = { git = "https://github.com/EmisonLu/sqlparser-rs.git", default-features = false, features = [] }
+sqlparser = { git = "https://github.com/Schenk75/sqlparser-rs", default-features = false, features = [], branch = "main" }
 thiserror = { git = "https://github.com/mesalock-linux/thiserror-sgx.git" }
 strum = "0.21"
 strum_macros = "0.21"

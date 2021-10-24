@@ -1,5 +1,3 @@
-use std::prelude::v1::*;
-
 mod interval;
 mod literal;
 mod row;

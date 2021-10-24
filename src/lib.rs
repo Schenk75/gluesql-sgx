@@ -67,7 +67,8 @@
 //! After you implement `Tester` trait, the only thing you need to do is calling `generate_tests!` macro.
 
 #![no_std]
-use std::prelude::v1::*;
+#![feature(control_flow_enum)]
+#![feature(bool_to_option)]
 #[macro_use]
 extern crate sgx_tstd as std;
 

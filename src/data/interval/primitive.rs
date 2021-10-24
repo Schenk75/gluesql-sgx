@@ -1,5 +1,3 @@
-use std::prelude::v1::*;
-
 use {
     super::Interval,
     std::ops::{Div, Mul},
